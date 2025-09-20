@@ -170,7 +170,7 @@ npm run postinstall
 
 Encontrou um bug ou tem uma sugestão? 
 
-- 📧 **Email**: suporte@disparadorwhatsapp.com
+- 📧 **Email**: ra.evangelist@gmail.com
 - 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/disparador-whatsapp/issues)
 - 💬 **Discussões**: [GitHub Discussions](https://github.com/seu-usuario/disparador-whatsapp/discussions)
 

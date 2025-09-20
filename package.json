@@ -1,0 +1,59 @@
+{
+  "name": "disparador-desktop",
+  "version": "1.0.0",
+  "description": "Disparador de mensagens para WhatsApp",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder",
+    "dist-win": "electron-builder --win",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "keywords": ["whatsapp", "disparador", "mensagens", "desktop"],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "dependencies": {
+    "electron": "^25.2.0",
+    "electron-context-menu": "^4.1.1",
+    "qrcode": "^1.5.3",
+    "whatsapp-web.js": "^1.23.0"
+  },
+  "devDependencies": {
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.disparador.whatsapp",
+    "productName": "Disparador WhatsApp",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "public/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64"]
+        }
+      ],
+      "icon": "public/icon.ico",
+      "requestedExecutionLevel": "asInvoker"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "allowElevation": true,
+      "installerIcon": "public/icon.ico",
+      "uninstallerIcon": "public/icon.ico",
+      "installerHeaderIcon": "public/icon.ico",
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "Disparador WhatsApp"
+    }
+  }
+}

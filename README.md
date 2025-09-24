@@ -1,5 +1,4 @@
 # 📱 Disparador WhatsApp Desktop
-
 > **Uma aplicação desktop poderosa para envio de mensagens personalizadas em massa via WhatsApp Web**
 
 ![WhatsApp](https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)
@@ -9,29 +8,42 @@
 
 ## 🚀 Características Principais
 
-- ✅ **Interface Intuitiva**: Design moderno e amigável inspirado no WhatsApp
-- ✅ **Mensagens Personalizadas**: Use `{nome}` para personalizar cada mensagem
-- ✅ **Processamento CSV**: Suporte completo a arquivos CSV com formato simples
-- ✅ **Controles Inteligentes**: Pausar, retomar e parar envios a qualquer momento
-- ✅ **Relatórios Detalhados**: Acompanhe sucessos e falhas em tempo real
-- ✅ **Prevenção de Bloqueios**: Pausas automáticas para evitar restrições do WhatsApp
-- ✅ **QR Code Integrado**: Autenticação fácil via WhatsApp Web
-- ✅ **Instalador Windows**: Distribuição profissional com assistente de instalação
+✅ Interface Intuitiva: Design moderno e amigável inspirado no WhatsApp
+
+✅ Mensagens Personalizadas: Use {nome} para personalizar cada mensagem
+
+✅ Processamento CSV: Suporte completo a arquivos CSV com formato simples
+
+✅ Controles de Envio: Pause, retome e pare os envios a qualquer momento.
+
+✅ Relatórios Detalhados: Ao final, visualize um sumário de sucessos/falhas com opção de baixar um CSV dos contatos que falharam.
+
+✅ Parada Inteligente: O programa encerra automaticamente se encontrar 5 linhas em branco consecutivas, entendendo o fim da lista.
+
+✅ Prevenção de Bloqueios: Pausas automáticas para evitar restrições do WhatsApp
+
+✅ QR Code Integrado: Autenticação fácil via WhatsApp Web
+
+✅ Instalador Windows: Distribuição profissional com assistente de instalação
 
 ## 📋 Pré-requisitos
+Windows 10/11 (64-bit)
 
-- **Windows 10/11** (64-bit)
-- **WhatsApp** instalado no celular
-- **Conexão com internet** estável
-- **Arquivo CSV** com contatos no formato: `Nome;Telefone`
+WhatsApp instalado no celular
+
+Conexão com internet estável
+
+Arquivo CSV com contatos no formato: Nome;Telefone
 
 ## 🔧 Instalação
-
 ### Opção 1: Usar o Instalador (Recomendado)
-1. Baixe o arquivo `Disparador WhatsApp Setup.exe`
-2. Execute o instalador como administrador
-3. Siga as instruções do assistente de instalação
-4. Inicie a aplicação pelo ícone na área de trabalho
+Baixe o arquivo Disparador WhatsApp Setup.exe
+
+Execute o instalador como administrador
+
+Siga as instruções do assistente de instalação
+
+Inicie a aplicação pelo ícone na área de trabalho
 
 ### Opção 2: Executar do Código Fonte
 ```bash
@@ -49,14 +61,14 @@ npm start
 ```
 
 ## 📊 Como Usar
-
 ### 1. Preparar o Arquivo CSV
 Crie um arquivo CSV com o seguinte formato:
+
 ```csv
+
 João Silva;11999999999
-Maria Santos;11888888888
-Pedro Costa;11777777777
-Ana Oliveira;11666666666
+Maria Santos;21988888888
+Pedro Costa;(11) 77777-7777
 ```
 
 ### 2. Configurar a Mensagem
@@ -75,41 +87,54 @@ Ana Oliveira;11666666666
 - **Retomar**: Continua de onde parou
 - **Parar**: Finaliza completamente o processo
 
+## ⏯️ Controles Durante o Envio
+Depois de iniciar o processo, você terá acesso aos seguintes controles em tempo real:
+
+Pausar: Interrompe temporariamente o envio de mensagens. Ideal para atender a outra demanda ou verificar a conexão.
+
+Retomar: Continua o processo de envio do ponto em que foi pausado.
+
+Parar e Sair: Encerra completamente a sessão de envio. Ao final, um relatório será exibido.
+
+## 📄 Relatório Final e Download
+Ao final de cada processo (seja por conclusão ou interrupção), a aplicação exibirá um relatório completo com:
+
+Total de Contatos Processados
+
+Mensagens Enviadas com Sucesso
+
+Número de Falhas
+
+Se houver alguma falha, um botão "Baixar Relatório de Falhas" ficará disponível, permitindo que você salve um arquivo .csv com os detalhes dos contatos que não receberam a mensagem e o motivo do erro.
+
 ## ⚙️ Configurações Inteligentes
+Recurso	Descrição	Valor
+Delay entre mensagens	Intervalo para evitar spam	15 segundos
+Pausa automática	A cada X mensagens	50 mensagens
+Tempo de pausa	Duração da pausa automática	60 segundos
+Formato do número	Código do país + número	+55 (Brasil)
 
-| Recurso | Descrição | Valor |
-|---------|-----------|-------|
-| **Delay entre mensagens** | Intervalo para evitar spam | 15 segundos |
-| **Pausa automática** | A cada X mensagens | 50 mensagens |
-| **Tempo de pausa** | Duração da pausa automática | 60 segundos |
-| **Formato do número** | Código do país + número | +55 (Brasil) |
-
+Exportar para as Planilhas
 ## 🛡️ Recursos de Segurança
+Autenticação Local: Suas credenciais ficam no seu computador
 
-- **Autenticação Local**: Suas credenciais ficam no seu computador
-- **Sem Armazenamento**: Não salvamos seus contatos ou mensagens
-- **Pausas Inteligentes**: Previne bloqueios automáticos do WhatsApp
-- **Relatórios de Erro**: Identifica números inválidos automaticamente
+Sem Armazenamento: Não salvamos seus contatos ou mensagens
 
-## 📱 Capturas de Tela
+Pausas Inteligentes: Previne bloqueios automáticos do WhatsApp
 
-### Interface Principal
-![Interface Principal](docs/screenshot-main.png)
-
-### QR Code de Autenticação
-![QR Code](docs/screenshot-qr.png)
-
-### Processo de Envio
-![Envio](docs/screenshot-sending.png)
+Relatórios de Erro: Identifica números inválidos automaticamente
 
 ## 🔧 Desenvolvimento
+Tecnologias Utilizadas
+Electron - Framework para aplicações desktop
 
-### Tecnologias Utilizadas
-- **Electron** - Framework para aplicações desktop
-- **Node.js** - Runtime JavaScript
-- **whatsapp-web.js** - Biblioteca para integração com WhatsApp Web
-- **QRCode** - Geração de códigos QR
-- **Electron Builder** - Empacotamento e distribuição
+Node.js - Runtime JavaScript
+
+whatsapp-web.js - Biblioteca para integração com WhatsApp Web
+
+QRCode - Geração de códigos QR
+
+Electron Builder - Empacotamento e distribuição
 
 ### Estrutura do Projeto
 ```
@@ -139,81 +164,89 @@ npm run pack
 # Instalar dependências nativas
 npm run postinstall
 ```
-
 ## 🚨 Limitações e Avisos
+⚠️ Use com responsabilidade: Respeite as políticas do WhatsApp
 
-- ⚠️ **Use com responsabilidade**: Respeite as políticas do WhatsApp
-- ⚠️ **Não spam**: Evite envios excessivos que possam ser considerados spam
-- ⚠️ **Números válidos**: Certifique-se de que os números estão corretos
-- ⚠️ **Conexão estável**: Mantenha internet estável durante os envios
+⚠️ Não spam: Evite envios excessivos que possam ser considerados spam
+
+⚠️ Números válidos: Certifique-se de que os números estão corretos
+
+⚠️ Conexão estável: Mantenha internet estável durante os envios
 
 ## 🐛 Solução de Problemas
+Problemas Comuns
+❓ QR Code não aparece
 
-### Problemas Comuns
+Verifique sua conexão com internet
 
-**❓ QR Code não aparece**
-- Verifique sua conexão com internet
-- Reinicie a aplicação
-- Certifique-se de que o WhatsApp Web está funcionando
+Reinicie a aplicação
 
-**❓ Mensagens não são enviadas**
-- Verifique se o número está no formato correto (apenas números)
-- Confirme se o contato existe no WhatsApp
-- Verifique se não há bloqueios temporários
+Certifique-se de que o WhatsApp Web está funcionando
 
-**❓ Aplicação trava durante envios**
-- Reduza a quantidade de contatos por lote
-- Verifique se há memória RAM suficiente
-- Reinicie a aplicação se necessário
+❓ Mensagens não são enviadas
+
+Verifique se o número está no formato correto (apenas números)
+
+Confirme se o contato existe no WhatsApp
+
+Verifique se não há bloqueios temporários
+
+❓ Aplicação trava durante envios
+
+Reduza a quantidade de contatos por lote
+
+Verifique se há memória RAM suficiente
+
+Reinicie a aplicação se necessário
 
 ## 📞 Suporte
+Encontrou um bug ou tem uma sugestão?
 
-Encontrou um bug ou tem uma sugestão? 
+📧 Email: ra.evangelist@gmail.com | hiukky.ra@gmail.com
 
-- 📧 **Email**: ra.evangelist@gmail.com
-- 🐛 **Issues**: [GitHub Issues](https://github.com/seu-usuario/disparador-whatsapp/issues)
-- 💬 **Discussões**: [GitHub Discussions](https://github.com/seu-usuario/disparador-whatsapp/discussions)
+🐛 Issues: GitHub Issues
+
+💬 Discussões: GitHub Discussions
 
 ## 📄 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
+Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
 
 ## 👨‍💻 Desenvolvedor
-
-**Rodrigo Angelo**
-
-[![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/RA-Evangelista)
-[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/angelo.hiukky/)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/rodrigo-angelo-evangelista-091406171/)
-
----
+Rodrigo Angelo
 
 ## ⭐ Contribuições
-
 Contribuições são sempre bem-vindas! Veja como você pode ajudar:
 
-1. 🍴 Faça um Fork do projeto
-2. 🔀 Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. 💾 Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. 📤 Push para a branch (`git push origin feature/AmazingFeature`)
-5. 🔃 Abra um Pull Request
+🍴 Faça um Fork do projeto
+
+🔀 Crie uma branch para sua feature (git checkout -b feature/AmazingFeature)
+
+💾 Commit suas mudanças (git commit -m 'Add some AmazingFeature')
+
+📤 Push para a branch (git push origin feature/AmazingFeature)
+
+🔃 Abra um Pull Request
 
 ## 📈 Roadmap
+[ ] v2.0: Suporte a imagens e documentos
 
-- [ ] **v2.0**: Suporte a imagens e documentos
-- [ ] **v2.1**: Agendamento de mensagens
-- [ ] **v2.2**: Templates de mensagens
-- [ ] **v2.3**: Integração com Google Sheets
-- [ ] **v2.4**: Relatórios em PDF
-- [ ] **v3.0**: Suporte a múltiplas contas
+[ ] v2.1: Agendamento de mensagens
 
----
+[ ] v2.2: Templates de mensagens
+
+[ ] v2.3: Integração com Google Sheets
+
+[ ] v2.4: Relatórios em PDF
+
+[ ] v3.0: Suporte a múltiplas contas
 
 <div align="center">
 
-**⚡ Feito com ❤️ e muito ☕ por [Rodrigo Angelo](https://github.com/RA-Evangelista)**
+⚡ Feito com ❤️ e muito ☕ por Rodrigo Angelo
 
-*Se este projeto te ajudou, considere dar uma ⭐!*
-
+Se este projeto te ajudou, considere dar uma ⭐!
 
 </div>
+
+
+
